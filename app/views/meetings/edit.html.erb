@@ -1,6 +1,40 @@
-<h1>Editing Meeting</h1>
 
-<%= render 'form' %>
+<BR><BR>
+<div class="big center">Reuniometro</div>
+
+
+<div class="big center">Tempo investido na reunião<BR><BR><BR><BR><BR><BR><BR><BR>
+  <span class="center" id="time"></span>
+</div>
+<BR><BR><BR><BR>
+
+
+  <div class="big center"># Participantes</div><BR><BR><BR><BR>
+    <table align="center">
+      <tr>
+          <td width="50px" class="participants">
+            <%= link_to image_tag('/img/minus.png'), "/meeting/#{@meeting.id}/increase_decrease_participants/-1}", :method=> :post %>
+          </td>
+          <td class="participants">
+            <div class='participants'><%= @meeting.participants %></div>
+          </td>
+          <td width="50px" class="participants">
+            <%= link_to image_tag('/img/plus.png'), "/meeting/#{@meeting.id}/increase_decrease_participants/1}", :method=> :post %>
+          </td>
+      </tr>
+    </table>
+  </div>
+  <BR><BR><BR><BR>
+  <div align="center">
+    <%= button_to 'Encerrar', "/meeting/#{@meeting.id}/close",{class: "big", :method=> :post} %>
+  </div>
+
+
 
 <%= link_to 'Show', @meeting %> |
 <%= link_to 'Back', meetings_path %>
+
+<script>
+ show();
+ startAt(<%= TimeDifference.between(@meeting.created_at, Time.zone.now).in_seconds.to_i * 1000 %>);
+</script>

@@ -11,23 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :participants %><br>
-    <%= f.number_field :participants %>
-  </div>
-  <div class="field">
-    <%= f.label :estimated_end_time %><br>
-    <%= f.time_select :estimated_end_time %>
-  </div>
-  <!-- <div class="field">
-    <%= f.label :end_time %><br>
-    <%= f.time_select :end_time %>
-  </div> -->
+ 
+
   <div class="actions">
-    <%= f.submit %>
+    <% if params[:action]=="new" %>
+      <%= f.submit 'Iniciar reunião' %>
+    <% else %>
+      <%= f.submit 'Encerrar reunião', :onclick => "document.getElementById('end_meeting').value='true';" %>
+    <% end %>
   </div>
 <% end %>

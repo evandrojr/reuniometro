@@ -15,6 +15,9 @@ class MeetingsController < ApplicationController
   # GET /meetings/new
   def new
     @meeting = Meeting.new
+    @meeting.participants = 2
+    @meeting.save!
+    redirect_to edit_meeting_path(@meeting)
   end
 
   # GET /meetings/1/edit
@@ -42,7 +45,7 @@ class MeetingsController < ApplicationController
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
+        format.html { redirect_to edit_meeting_path(@meeting), notice: 'Meeting was successfully updated.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
         format.html { render :edit }
@@ -59,6 +62,20 @@ class MeetingsController < ApplicationController
       format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def increase_decrease_participants
+    @meeting = Meeting.find(params[:id])
+    @meeting.participants = @meeting.participants + params[:value].to_i
+    @meeting.save!
+    redirect_to edit_meeting_path(@meeting)
+  end
+
+  def close
+    @meeting = Meeting.find(params[:id])
+    @meeting.end_time = Time.current
+    @meeting.save!
+    redirect_to meeting_path(@meeting)
   end
 
   private

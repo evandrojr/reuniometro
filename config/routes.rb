@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'meetings#new'
 
+  controller :meetings do
+    post 'meeting/:id/increase_decrease_participants/:value'  => :increase_decrease_participants, as: :increase_decrease_participants
+    post 'meeting/:id/close'             => :close, as: :close_meeting
+  end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

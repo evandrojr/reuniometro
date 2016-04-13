@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+div.participants{
+  font-size: 16em;
+}
+
+.big{
+  font-size: 6em;
+  padding: 30px;
+}
+
+.center{
+  text-align: center;
+}
+
+td.participants{
+    border: 15px;
+}
