@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+gem 'time_difference'
+gem 'jazz_fingers', require: 'awesome_print'
+gem 'pry-rails', :group => :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
