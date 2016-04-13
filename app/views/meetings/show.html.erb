@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @meeting.title %>
+</p>
+
+<p>
+  <strong>Participants:</strong>
+  <%= @meeting.participants %>
+</p>
+
+<p>
+  <strong>Estimated end time:</strong>
+  <%= @meeting.estimated_end_time %>
+</p>
+
+
+	<div>Time: <span id="time"></span></div>
+  	<!-- <input type="button" value="start" onclick="start();">
+  	<input type="button" value="stop" onclick="stop();">
+  	<input type="button" value="reset" onclick="reset()"> -->
+
+<p>
+  <strong>End time:</strong>
+  <%= @meeting.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', meetings_path %>
+
+<script>
+ show();
+ startAt(<%= @meeting. %>);
+</script>
