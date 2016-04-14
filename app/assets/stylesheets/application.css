@@ -18,6 +18,11 @@ div.participants{
   font-size: 16em;
 }
 
+#time{
+  padding: 40px;
+
+}
+
 .big{
   font-size: 6em;
   padding: 30px;

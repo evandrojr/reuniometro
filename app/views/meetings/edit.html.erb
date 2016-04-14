@@ -1,16 +1,16 @@
 
 <BR><BR>
-<div class="big center">Reuniometro</div>
+<div class="big center">Reuniômetro</div><BR><BR><BR><BR>
 
 
-<div class="big center">Tempo investido na reunião<BR><BR><BR><BR><BR><BR><BR><BR>
-  <span class="center" id="time"></span>
+<div class="big center">Tempo investido na reunião<BR><BR><BR><BR><BR>
+  <div class="center" id="time"></div>
 </div>
 <BR><BR><BR><BR>
 
 
-  <div class="big center"># Participantes</div><BR><BR><BR><BR>
-    <table align="center">
+  <div class="big center">#Participantes</div><BR><BR><BR><BR>
+    <table align="center" cellpadding="15">
       <tr>
           <td width="50px" class="participants">
             <%= link_to image_tag('/img/minus.png'), "/meeting/#{@meeting.id}/increase_decrease_participants/-1}", :method=> :post %>
@@ -28,7 +28,6 @@
   <div align="center">
     <%= button_to 'Encerrar', "/meeting/#{@meeting.id}/close",{class: "big", :method=> :post} %>
   </div>
-
 
 
 <%= link_to 'Show', @meeting %> |
