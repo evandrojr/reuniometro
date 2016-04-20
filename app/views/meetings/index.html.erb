@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Meetings</h1>
+<h1>Reuniões</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Participants</th>
-      <th>Estimated end time</th>
-      <th>End time</th>
+      <th>Número de participantes</th>
+      <th>Duração</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +14,8 @@
   <tbody>
     <% @meetings.each do |meeting| %>
       <tr>
-        <!-- <td><%= meeting.title %></td> -->
         <td><%= meeting.participants %></td>
-        <td><%= meeting.end %></td>
+        <td><%= meeting.duration_for_humans %></td>
         <td><%= link_to 'Show', meeting %></td>
         <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
         <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>

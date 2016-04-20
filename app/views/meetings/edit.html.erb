@@ -30,7 +30,11 @@
   </div>
   <BR><BR><BR><BR>
   <div align="center">
-    <%= button_to 'Encerrar', "/meeting/#{@meeting.id}/close",{class: "big", :method=> :post} %>
+
+    <% if @meeting.finish.nil? %>
+      <%= button_to 'Encerrar', "/meeting/#{@meeting.id}/close",{class: "big", :method=> :post} %>
+    <% end %>
+
   </div>
 
 
