@@ -73,7 +73,7 @@ class MeetingsController < ApplicationController
 
   def close
     @meeting = Meeting.find(params[:id])
-    @meeting.end_time = Time.current
+    @meeting.finish = DateTime.now
     @meeting.save!
     redirect_to meeting_path(@meeting)
   end

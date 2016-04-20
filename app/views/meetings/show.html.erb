@@ -9,7 +9,7 @@
 
 <p>
   <div class="big">Duração
-    <%= TimeDifference.between(@meeting.created_at.time, @meeting.end_time).in_minutes %>
+    <%= @meeting.duration_for_humans %>
   </div>
 </p>
 

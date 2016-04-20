@@ -16,10 +16,9 @@
   <tbody>
     <% @meetings.each do |meeting| %>
       <tr>
-        <td><%= meeting.title %></td>
+        <!-- <td><%= meeting.title %></td> -->
         <td><%= meeting.participants %></td>
-        <td><%= meeting.estimated_end_time %></td>
-        <td><%= meeting.end_time %></td>
+        <td><%= meeting.end %></td>
         <td><%= link_to 'Show', meeting %></td>
         <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
         <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>

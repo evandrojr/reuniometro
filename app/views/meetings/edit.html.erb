@@ -4,7 +4,11 @@
 
 
 <div class="big center">Tempo investido na reunião<BR><BR><BR><BR><BR>
-  <div class="center" id="time"></div>
+  <% if @meeting.finish.nil? %>
+    <div class="center" id="time"></div>
+  <% else %>
+    <%= @meeting.duration_for_humans %>
+  <% end %>
 </div>
 <BR><BR><BR><BR>
 
